@@ -22,41 +22,64 @@ O objetivo deste projeto é desenvolver um sistema de monitoramento de temperatu
      - Tipo: Módulo Wi-Fi ESP8266
      - Função: Enviar dados para uma interface de monitoramento remoto.
    - **Fonte de Alimentação:**
-     - Tipo: Bateria 9v 
-
+     - Tipo: Bateria 9v
+   - **Placa protoboard:**
+     - Tipo: 400 pontos
+     - Função: Utilizada para montar o sistema em baixa escala.
+     
 ### 2. 🤖 **Software**
    - **Firmware do Microcontrolador:**
-     - Linguagem de Programação: C/C++ e Python
+     - Linguagem de Programação: C/C++
      - Funções Principais:
        - Leitura dos dados do sensor de temperatura.
        - Processamento e comparação das leituras com limites predefinidos.
        - Acionamento das lâmpadas de alerta conforme as condições de temperatura.
-       - Utilizar IA para precisão dos dados.
    - **Interface de Monitoramento:**
-     - Tipo: Aplicativo mobile
-     - Linguagem: Flutter/Dart
+     - Tipo: Tago.io
+     - Linguagem: Python
      - Função: Controle e exibição das leituras de temperatura e o status das lâmpadas de alerta.
    - **Armazenamento em Nuvem:**
      - Tipo: Banco de Dados NoSQL (Firebase)
      - Função: Armazenar dados de temperatura para análises e processamento posterior.
+   - **Inteligência Artficial**
+     - Tipo: a definir
+     - Função: a definir    
 
 ## Especificações Técnicas
 
-### 1. 📟 **Sensor de Temperatura**
+### 1. 📟 **Sensor de Temperatura Max6675**
    - Faixa de Medição: 0 a 800°C
    - Precisão: ±2°C
    - Conexão: SPI (Serial Peripheral Interface) interface digital
+   - Preço: R$ 40,00
 
-### 2. 🔑 **Microcontrolador**
+### 2. 🔑 **Microcontrolador Arduino Uno**
    - Processador: ATmega328P
    - Memória: 32 KB
+   - Preço: R$ 50,00
 
-### 3. 💡 **Lâmpadas de Alerta**
+### 3. 📹 **Módulo de Comunicação ESP8266**
+   - Taxa de transmissão: 110 a 460 Mbps
+   - Faixa de frequência: 2.4GHz
+   - Preço: R$ 30,00
+
+### 4. 💡 **Lâmpadas de Alerta**
    - Tipo de Lâmpada: LEDs
+   - Preço: R$ 3,00
    - Cores e Significados:
      - **Verde:** Temperatura Normal 0 a 69°C
      - **Amarela:** Temperatura Moderadamente Alta 70 a 139°C
      - **Vermelha:** Temperatura Crítica 140 a 210°C
+
+### 5. ⚡ **Placa protoboard**
+   - Quantidade de pontos: 400
+   - Preço: R$ 17,00
+
+### 6. 🔋 **Fonte de Alimentação 9v**
+   - Voltagem: 9V
+   - Capacidade: 60 mAh
+   - Preço: R$ 15,00
+   
 
 ## Plano de Implementação
 
