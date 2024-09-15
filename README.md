@@ -6,6 +6,10 @@ O objetivo deste projeto é desenvolver um sistema de monitoramento de temperatu
 
 - **Observação:** O projeto vai ser desenvolvido em baixa escala utilizando placa protoboard.
 
+## 📁 Documentações do Projeto
+- Arquitetura: ![IOT-SYSTEM drawio](https://github.com/user-attachments/assets/1e2e9101-3a30-4b49-966a-351bdb95af5f)
+- Diagrama de Camadas: [Diagrama_IOT.pdf](https://github.com/user-attachments/files/17007327/Diagrama_IOT.pdf)
+
 ## ⚙️ Componentes do Projeto 
 
 ### 1. 🕹️ **Hardware**
