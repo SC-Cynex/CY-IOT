@@ -8,7 +8,9 @@ O objetivo deste projeto é desenvolver um sistema de monitoramento de temperatu
 
 ## 📁 Documentações do Projeto
 - Arquitetura: ![IOT-SYSTEM drawio](https://github.com/user-attachments/assets/1e2e9101-3a30-4b49-966a-351bdb95af5f)
-- Diagrama de Camadas: [Diagrama_IOT.pdf](https://github.com/user-attachments/files/17007327/Diagrama_IOT.pdf)
+- Diagrama de Camadas: [Diagrama_IOT.pdf](https://github.com/user-attachments/files/17139390/Diagrama_IOT.4.pdf)
+
+- Tinkercad: [Circuito](https://www.tinkercad.com/things/334Sx6Zc3Pj-cy-iot?sharecode=zEvAKJmJxAJARFHejM11XBLnYUOGHZIrxSb4UHtT__k)
 
 ## ⚙️ Componentes do Projeto 
 
