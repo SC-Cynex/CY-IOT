@@ -9,11 +9,11 @@ O objetivo deste projeto é desenvolver um sistema de monitoramento de temperatu
 ## 📁 Documentações do Projeto
 - Arquitetura: ![IOT-SYSTEM drawio](https://github.com/user-attachments/assets/fa835dc3-67dd-413f-b378-0c93dfc8276b)
 
-- Diagrama de Camadas: [Diagrama_IOT.pdf](https://github.com/user-attachments/files/17139390/Diagrama_IOT.4.pdf)
+- Diagrama de Camadas: [Diagrama_IOT.pdf](https://github.com/user-attachments/files/17251863/Diagrama_IOT.pdf)
 
 - Tinkercad: [Circuito](https://www.tinkercad.com/things/334Sx6Zc3Pj-cy-iot?sharecode=zEvAKJmJxAJARFHejM11XBLnYUOGHZIrxSb4UHtT__k)
 
-## ⚙️ Componentes do Projeto 
+## 🧩 Componentes do Projeto 
 
 ### 1. 🕹️ **Hardware**
    - **Sensor de Temperatura:** 
@@ -52,7 +52,7 @@ O objetivo deste projeto é desenvolver um sistema de monitoramento de temperatu
      - Tipo: a definir
      - Função: a definir    
 
-## Especificações Técnicas
+## ⚙️ Especificações Técnicas
 
 ### 1. 📟 **Sensor de Temperatura Max6675**
    - Faixa de Medição: 0 a 800°C
@@ -88,7 +88,7 @@ O objetivo deste projeto é desenvolver um sistema de monitoramento de temperatu
    - Preço: R$ 15,00
    
 
-## Plano de Implementação
+## 🛠️ Plano de Implementação
 
 ### 1. 📝 **Fase de Planejamento**
    - Definir requisitos e especificações detalhadas.
