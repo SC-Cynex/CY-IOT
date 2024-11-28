@@ -19,20 +19,14 @@ O objetivo deste projeto é desenvolver um sistema de monitoramento de temperatu
    - **Sensor de Temperatura:** 
      - Tipo: Sensor Max6675 
      - Função: Medir a temperatura do freio do tambor.
-   - **Microcontrolador:**
-     - Tipo: Arduino Uno
-     - Função: Ler os dados do sensor e processar as informações.
-   - **Lâmpadas de Alerta:**
-     - Tipo: LEDs
-     - Função: Indicar diferentes níveis de temperatura (Verde, Amarelo e Vermelho).
+   - **Sensor de Localização GPS:**
+     - Tipo: NEO-6M
+     - Função: Fornece coordenadas geográficas, Velocidade e altura para rastreamento e localização do sistema.
    - **Módulo de Comunicação:**
-     - Tipo: Módulo Wi-Fi ESP8266
-     - Função: Enviar dados para uma interface de monitoramento remoto.
+     - Tipo: Módulo ESP8266
+     - Função: Realiza a leitura dos sensores e gerencia os dados capturados, além de permitir comunicação Wi-Fi para integração com outras plataformas.
    - **Fonte de Alimentação:**
      - Tipo: Bateria 9v
-   - **Placa protoboard:**
-     - Tipo: 400 pontos
-     - Função: Utilizada para montar o sistema em baixa escala.
      
 ### 2. 🤖 **Software**
    - **Firmware do Microcontrolador:**
@@ -60,27 +54,13 @@ O objetivo deste projeto é desenvolver um sistema de monitoramento de temperatu
    - Conexão: SPI (Serial Peripheral Interface) interface digital
    - Preço: R$ 40,00
 
-### 2. 🔑 **Microcontrolador Arduino Uno**
-   - Processador: ATmega328P
-   - Memória: 32 KB
-   - Preço: R$ 50,00
+### 2. 🔑 **Sensor GPS Neo-6M**
+   - Preço: R$ 45,00
 
 ### 3. 📹 **Módulo de Comunicação ESP8266**
    - Taxa de transmissão: 110 a 460 Mbps
    - Faixa de frequência: 2.4GHz
-   - Preço: R$ 30,00
-
-### 4. 💡 **Lâmpadas de Alerta**
-   - Tipo de Lâmpada: LEDs
-   - Preço: R$ 3,00
-   - Cores e Significados:
-     - **Verde:** Temperatura Normal 0 a 69°C
-     - **Amarela:** Temperatura Moderadamente Alta 70 a 139°C
-     - **Vermelha:** Temperatura Crítica 140 a 210°C
-
-### 5. ⚡ **Placa protoboard**
-   - Quantidade de pontos: 400
-   - Preço: R$ 17,00
+   - Preço: R$ 62,00
 
 ### 6. 🔋 **Fonte de Alimentação 9v**
    - Voltagem: 9V
