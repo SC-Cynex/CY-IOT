@@ -1,8 +1,12 @@
 import { Route, Routes } from "react-router-dom";
 import Home from "./Pages/Home";
+import Map from "./Pages/Map";
+import Dashboard from "./Pages/DashBoard";
 
 const routes = [
-  { path: "/", component: Home }
+  { path: "/", component: Home },
+  { path: "/map", component: Map },
+  { path: "/dashboard", component: Dashboard },
 ];
 
 const MainRoutes = () => {
