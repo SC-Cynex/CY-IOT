@@ -19,13 +19,11 @@ export const DashboardConfigProvider = ({ children }) => {
         },
     };
 
-    // Carrega a configuração inicial do localStorage ou usa o padrão
     const [config, setConfig] = useState(() => {
         const savedConfig = localStorage.getItem("dashboardConfig");
         return savedConfig ? JSON.parse(savedConfig) : defaultConfig;
     });
 
-    // Salva o estado atual no localStorage sempre que ele mudar
     useEffect(() => {
         localStorage.setItem("dashboardConfig", JSON.stringify(config));
     }, [config]);

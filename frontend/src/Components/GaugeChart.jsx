@@ -7,12 +7,12 @@ const GaugeChart = ({ value }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setDisplayValue((prev) => {
-        const step = 0.1; // Incremento em passos menores
+        const step = 0.1;
         if (prev < value) return Math.min(prev + step, value);
         if (prev > value) return Math.max(prev - step, value);
         return prev;
       });
-    }, 100); // Delay de 100ms
+    }, 100);
     return () => clearTimeout(timer);
   }, [displayValue, value]);
 
