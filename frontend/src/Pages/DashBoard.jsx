@@ -23,7 +23,7 @@ const Dashboard = () => {
 
     useEffect(() => {
         if (!views.includes(view)) {
-            setView(views[0] || ""); 
+            setView(views[0] || "");
         }
     }, [views, view]);
 
@@ -33,17 +33,17 @@ const Dashboard = () => {
                 const dashboardData = await getDashboardData();
 
                 if (dashboardData && dashboardData.length > 0) {
-                    const latestData = dashboardData[dashboardData.length - 1];
+                    const latestData = dashboardData[0];
 
-                    setTemperature(latestData.temp || 0);
+                    setTemperature(latestData.temperature || 0);
                     setData(
                         dashboardData.map((entry) => ({
                             time: entry.time || new Date().toLocaleTimeString(),
                             speed: entry.speed || 0,
-                            altitude: entry.alt || 0,
-                            hdop: entry.hdop || 0,
-                            satellites: entry.sat || 0,
-                            temperature: entry.temp || 0,
+                            altitude: entry.altitude || 0,
+                            hdop: entry.accuracy || 0,
+                            temperature: entry.temperature || 0,
+                            colorCode: entry.colorCode || "",
                         }))
                     );
                 }
@@ -79,7 +79,7 @@ const Dashboard = () => {
                         textAlign: "center",
                     }}
                 >
-                    <Empty 
+                    <Empty
                         image="https://gw.alipayobjects.com/zos/antfincdn/ZHrcdLPrvN/empty.svg"
                         description={anyView ? "Nenhuma visão disponível, acesse as configurações para habilitar" : "Escolha uma visão para começar a ver o dashboard"}
                     />
@@ -94,7 +94,7 @@ const Dashboard = () => {
                         <Col span={12}>
                             <Card style={{ height: "410px" }}>
                                 <div style={headerStyle("#0077b6")}>Temperatura Atual</div>
-                                <GaugeChart value={temperature} />
+                                <GaugeChart value={temperature} color={data[0]?.colorCode} />
                             </Card>
                         </Col>
                     )}
@@ -114,31 +114,25 @@ const Dashboard = () => {
                             </Card>
                         </Col>
                     )}
-                    {charts.showSatellites && (
-                        <Col span={12}>
-                            <Card>
-                                <div style={headerStyle("#387908")}>Satélites</div>
-                                <DataChart data={data} dataKey="satellites" color="#387908" />
-                            </Card>
-                        </Col>
-                    )}
                 </Row>
             );
         }
 
         if (view === "table" && views.includes("table")) {
-            const columns = table.columns.map((col) => ({
-                title: col.charAt(0).toUpperCase() + col.slice(1),
-                dataIndex: col,
-                key: col,
-            }));
+            const columns = table.columns
+                .filter((col) => col !== "hdop" && col !== "satellites")
+                .map((col) => ({
+                    title: col.charAt(0).toUpperCase() + col.slice(1),
+                    dataIndex: col,
+                    key: col,
+                }));
             return (
                 <Card>
                     <div style={headerStyle("#0077b6")}>Dados em Tabela</div>
                     <Table
                         columns={columns}
                         dataSource={data}
-                        rowKey={(record, index) => index}
+                        rowKey={(_, index) => index}
                         pagination={{ pageSize: 10 }}
                     />
                 </Card>
@@ -149,7 +143,7 @@ const Dashboard = () => {
             const statsData = {
                 avgSpeed: data.reduce((sum, d) => sum + d.speed, 0) / data.length || 0,
                 maxAltitude: Math.max(...data.map((d) => d.altitude), 0),
-                minTemperature: Math.min(...data.map((d) => d.temperature), 0),
+                maxTemperature: Math.max(...data.map((d) => d.temperature), 0),
             };
 
             return (
@@ -173,8 +167,8 @@ const Dashboard = () => {
                     {metrics.includes("min") && (
                         <Col span={8}>
                             <Card>
-                                <div style={headerStyle("#387908")}>Temperatura Mínima</div>
-                                <h3 style={{ textAlign: "center" }}>{statsData.minTemperature} °C</h3>
+                                <div style={headerStyle("#387908")}>Temperatura Máxima</div>
+                                <h3 style={{ textAlign: "center" }}>{statsData.maxTemperature} °C</h3>
                             </Card>
                         </Col>
                     )}

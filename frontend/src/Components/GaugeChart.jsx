@@ -1,13 +1,13 @@
 import { PieChart, Pie, Cell } from "recharts";
 import { useState, useEffect } from "react";
 
-const GaugeChart = ({ value }) => {
+const GaugeChart = ({ value, color }) => {
   const [displayValue, setDisplayValue] = useState(value);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setDisplayValue((prev) => {
-        const step = 0.1;
+        const step = 5; // Incremento por passo
         if (prev < value) return Math.min(prev + step, value);
         if (prev > value) return Math.max(prev - step, value);
         return prev;
@@ -16,11 +16,16 @@ const GaugeChart = ({ value }) => {
     return () => clearTimeout(timer);
   }, [displayValue, value]);
 
+  const normalizedValue = Math.min(Math.max(displayValue, 0), 400);
   const data = [
-    { name: "Temperatura", value: displayValue },
-    { name: "Restante", value: 100 - displayValue },
+    { name: "Temperatura", value: normalizedValue },
+    { name: "Restante", value: 400 - normalizedValue },
   ];
-  const COLORS = ["#0077b6", "#ccc"];
+
+  const COLORS = [
+    color, 
+    "#ccc",
+  ];
 
   const chartSize = 500;
 
@@ -53,6 +58,7 @@ const GaugeChart = ({ value }) => {
             cy="100%"
             innerRadius={chartSize / 4}
             outerRadius={chartSize / 3}
+            isAnimationActive={false} // Desativa animação inicial
           >
             {data.map((_, index) => (
               <Cell key={`cell-${index}`} fill={COLORS[index]} />
@@ -69,7 +75,7 @@ const GaugeChart = ({ value }) => {
             fontWeight: "bold",
           }}
         >
-          {displayValue.toFixed(2)}°C
+          {normalizedValue.toFixed(2)}°C
         </div>
         <div
           style={{

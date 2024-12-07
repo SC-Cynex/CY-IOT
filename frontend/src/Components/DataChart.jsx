@@ -13,7 +13,9 @@ const DataChart = ({ data, dataKey, color }) => {
           <XAxis
             dataKey="time"
             tickFormatter={(time) => {
-              const utcDate = new Date(time);
+              const currentDate = new Date().toISOString().split("T")[0];
+              const utcDate = new Date(`${currentDate}T${time}Z`);
+
               utcDate.setHours(utcDate.getHours() + 3);
 
               return utcDate.toLocaleTimeString("pt-BR", {

@@ -87,7 +87,6 @@ const Settings = () => {
                             { label: "Hora", value: "time" },
                             { label: "Velocidade", value: "speed" },
                             { label: "Altitude", value: "altitude" },
-                            { label: "Satélites", value: "satellites" },
                             { label: "Temperatura", value: "temperature" },
                             { label: "HDOP", value: "hdop" },
                         ]}

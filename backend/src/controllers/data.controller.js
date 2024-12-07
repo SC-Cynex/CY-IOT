@@ -104,8 +104,6 @@ const calculateColorId = (temperature, speed) => {
     }
 };
 
-
-
 const insertData = async (req, res) => {
     try {
         const { location, speed, temp, alt, time } = req.body;
@@ -155,7 +153,6 @@ const insertData = async (req, res) => {
         res.status(500).json({ error: 'Erro ao inserir os dados' });
     }
 };
-
 
 module.exports = {
     getData,
